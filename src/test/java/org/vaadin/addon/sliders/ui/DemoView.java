@@ -18,12 +18,12 @@ public class DemoView extends VerticalLayout
 
     public DemoView()
     {
-        Anchor sourceLink = new Anchor("https://github.com/markhm/vaadin-paper-sliders", " (source code on GitHub)");
+        Anchor sourceLink = new Anchor("https://github.com/belomx/vaadin-paper-sliders", " (source code on GitHub)");
         sourceLink.setTarget("_blank");
 
         HorizontalLayout titleBox = new HorizontalLayout();
         titleBox.setAlignItems(Alignment.BASELINE);
-        H3 title = new H3("Vaadin paper-slider, ported to Vaadin v14");
+        H3 title = new H3("Vaadin paper-slider, ported to Vaadin v17");
         titleBox.add(title, sourceLink);
         add(titleBox);
 
@@ -42,14 +42,12 @@ public class DemoView extends VerticalLayout
         whiteline.setHeight("50px");
         add(whiteline);
 
-        // NB: The PaperRangeSlider does not support Polymer 3.
+        HorizontalLayout rangeSliderLine = new HorizontalLayout();
 
-//        HorizontalLayout rangeSliderLine = new HorizontalLayout();
-//
-//        Label rangeValues = new Label("Range values");
-//        rangeSlider = new PaperRangeSlider(0, 100, 40, 60);
-//        rangeSlider.addValueChangeListener(e -> rangeValues.setText("Range values: " + e.getValue()));
-//        rangeSliderLine.add(rangeSlider, rangeValues);
-//        add(rangeSliderLine);
+        Label rangeValues = new Label("Range values");
+        PaperRangeSlider rangeSlider = new PaperRangeSlider(0, 100, 40, 60);
+        rangeSlider.addValueChangeListener(e -> rangeValues.setText("Range values: " + e.getValue().getLowerValue()+ ", "+e.getValue().getUpperValue()));
+        rangeSliderLine.add(rangeSlider, rangeValues);
+        add(rangeSliderLine);
     }
 }

@@ -1,6 +1,5 @@
 import '@polymer/polymer/polymer-element.js';
-// import '@paper-range-slider/paper-range-slider.js'
-import './paper-range-slider.html'
+import '@belomx/paper-range-slider/paper-range-slider.js'
 import {html} from '@polymer/polymer/lib/utils/html-tag.js';
 import {PolymerElement} from "@polymer/polymer";
 

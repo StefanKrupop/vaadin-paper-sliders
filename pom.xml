@@ -4,30 +4,28 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.vaadin.addon</groupId>
-    <artifactId>paper-slider</artifactId>
-    <version>1.0.1</version>
+    <artifactId>paper-range-slider</artifactId>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
 
-    <name>Paper-Slider components</name>
-    <description>Integration of Paper-Slider components for Vaadin 10+</description>
+    <name>Paper-Range-Slider components</name>
+    <description>Integration of Paper-Slider components for Vaadin 17</description>
     
     <properties>
 
         <!-- <vaadin.version>[10.0.0,)</vaadin.version> -->
-        <vaadin.version>14.1.25</vaadin.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+	    <vaadin.version>17.0.0</vaadin.version>
+	    <java.version>11</java.version>
+	    <maven.compiler.source>${java.version}</maven.compiler.source>
+	    <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
         <jetty.version>9.4.15.v20190215</jetty.version>
-
         <paper-slider.version>3.0.2</paper-slider.version> <!-- 3.0.2 is newer -->
-        <paper-range-slider.version>1.0.4</paper-range-slider.version>
     </properties>
 
     <organization>
-        <name>Bernd Hopp</name>
+        <name>belomx</name>
     </organization>
 
     <dependencyManagement>
@@ -122,11 +120,6 @@
             <groupId>org.webjars.bowergithub.polymerelements</groupId>
             <artifactId>paper-slider</artifactId>
             <version>${paper-slider.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars.bowergithub.iftachsadeh</groupId>
-            <artifactId>paper-range-slider</artifactId>
-            <version>${paper-range-slider.version}</version>
         </dependency>
     </dependencies>
 
@@ -260,7 +253,7 @@
                         <phase>package</phase>
                         <configuration>
                             <!--                            <attachClasses>true</attachClasses>-->
-                            <webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
+                            <webXml>${basedir}/src/main/webApp/WEB-INF/web.xml</webXml>
                         </configuration>
                         <goals>
                             <goal>inplace</goal>
@@ -328,24 +321,6 @@
                             </execution>
                         </executions>
                     </plugin>
-<!--                    <plugin>-->
-<!--                        <groupId>org.apache.maven.plugins</groupId>-->
-<!--                        <artifactId>maven-javadoc-plugin</artifactId>-->
-<!--                        <version>2.10.4</version>-->
-<!--                        <executions>-->
-<!--                            <execution>-->
-<!--                                <id>attach-javadocs</id>-->
-<!--                                <phase>verify</phase>-->
-<!--                                <goals>-->
-<!--                                    <goal>jar</goal>-->
-<!--                                </goals>-->
-<!--                            </execution>-->
-<!--                        </executions>-->
-<!--                        <configuration>-->
-<!--                            <quiet>true</quiet>-->
-<!--                            <additionalparam>-Xdoclint:none</additionalparam>-->
-<!--                        </configuration>-->
-<!--                    </plugin>-->
                 </plugins>
             </build>
         </profile>
