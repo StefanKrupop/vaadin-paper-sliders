@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.vaadin.flow.component.AbstractField;
 import com.vaadin.flow.component.HasSize;
+import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.HasValue;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
@@ -24,8 +25,10 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 @Tag("vaadin-paper-slider")
 @JsModule("./addon/sliders/paper-slider.js")
 @NpmPackage(value = "@polymer/paper-slider", version = "^3.0.1")
-public class PaperSlider extends PolymerTemplate<PaperSlider.SliderModel> implements HasValue<AbstractField.ComponentValueChangeEvent<PaperSlider, Integer>, Integer>, HasSize {
+public class PaperSlider extends PolymerTemplate<PaperSlider.SliderModel> implements HasStyle, HasValue<AbstractField.ComponentValueChangeEvent<PaperSlider, Integer>, Integer>, HasSize {
 
+    private static final long serialVersionUID = 1L;
+    
     private final List<ValueChangeListener<? super AbstractField.ComponentValueChangeEvent<PaperSlider, Integer>>> listeners = new ArrayList<>();
     private int oldValue;
 

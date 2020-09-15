@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.vaadin.flow.component.AbstractField;
+import com.vaadin.flow.component.HasSize;
+import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.HasValue;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
@@ -24,7 +26,7 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 @Tag("vaadin-paper-range-slider")
 @JsModule("./addon/sliders/paper-range-slider.js")
 @NpmPackage(value = "@belomx/paper-range-slider", version = "1.0.3")
-public class PaperRangeSlider extends PolymerTemplate<PaperRangeSlider.RangeSliderModel> implements HasValue<AbstractField.ComponentValueChangeEvent<PaperRangeSlider, PaperRangeSlider.IntRange>, PaperRangeSlider.IntRange> {
+public class PaperRangeSlider extends PolymerTemplate<PaperRangeSlider.RangeSliderModel> implements HasStyle, HasSize, HasValue<AbstractField.ComponentValueChangeEvent<PaperRangeSlider, PaperRangeSlider.IntRange>, PaperRangeSlider.IntRange> {
 
     private static final long serialVersionUID = 1L;
     
