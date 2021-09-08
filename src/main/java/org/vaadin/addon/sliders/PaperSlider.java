@@ -95,6 +95,26 @@ public class PaperSlider extends PolymerTemplate<PaperSlider.SliderModel> implem
         getModel().setMax(max);
     }
 
+    public boolean getPin() {
+        return getModel().getPin();
+    }
+
+    public void setPin(boolean pin) {
+        getModel().setPin(pin);
+    }
+
+    public void setAlwaysShowPin(boolean alwaysShowPin) {
+        getModel().setAlwaysShowPin(alwaysShowPin);
+    }
+
+    public boolean getSnaps() {
+        return getModel().getSnaps();
+    }
+
+    public void setSnaps(boolean snaps) {
+        getModel().setSnaps(snaps);
+    }
+
     @Override
     public Registration addValueChangeListener(ValueChangeListener<? super AbstractField.ComponentValueChangeEvent<PaperSlider, Integer>> listener) {
         requireNonNull(listener);
@@ -144,5 +164,16 @@ public class PaperSlider extends PolymerTemplate<PaperSlider.SliderModel> implem
         int getValue();
 
         void setValue(int value);
+
+        boolean getPin();
+
+        void setPin(boolean pin);
+
+        void setAlwaysShowPin(boolean alwaysShowPin);
+
+        boolean getSnaps();
+
+        void setSnaps(boolean snaps);
+
     }
 }

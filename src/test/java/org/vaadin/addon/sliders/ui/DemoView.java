@@ -1,6 +1,5 @@
 package org.vaadin.addon.sliders.ui;
 
-import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Label;
@@ -35,6 +34,8 @@ public class DemoView extends VerticalLayout
         HorizontalLayout sliderLine = new HorizontalLayout();
         slider = new PaperSlider(0, 100, 50);
         slider.addValueChangeListener(e -> sliderValue.setText("Slider value: "+e.getValue()));
+        slider.setPin(true);
+        slider.setAlwaysShowPin(true);
         sliderLine.add(slider, sliderValue);
         add(sliderLine);
 

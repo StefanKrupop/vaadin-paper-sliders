@@ -1,5 +1,6 @@
 import '@polymer/polymer/polymer-element.js';
 import '@polymer/paper-slider/paper-slider.js'
+import '@belomx/paper-range-slider/paper-range-slider.js'
 import {html} from '@polymer/polymer/lib/utils/html-tag.js';
 import {PolymerElement} from "@polymer/polymer";
 
@@ -17,13 +18,16 @@ class VaadinPaperSlider extends
         <style include="paper-single-slider-shared-styles">
         /* polymer-cli linter breaks with empty line */          
         </style>
-        <paper-slider 
+        <paper-range-slider single-slider
             class="singleSlider"
             on-value-change="onValueChanged" 
             min="[[min]]" 
-            max="[[max]]" 
-            value="{{value}}">    
-        </paper-slider>
+            max="[[max]]"
+            pin="[[pin]]"
+            always-show-pin="[[alwaysShowPin]]"
+            snaps="[[snaps]]"
+            value-max="{{value}}">
+        </paper-range-slider>
     `;
     }
 
@@ -46,22 +50,28 @@ class VaadinPaperSlider extends
             },
             value: {
                 type: Number
+            },
+            pin: {
+                type: Boolean
+            },
+            expand: {
+                type: Boolean
+            },
+            snaps: {
+                type: Boolean
             }
         }
     }
 
     updateConfig() {
-
         console.log("**** - At updateConfig()");
-
     }
 
     ready() {
         super.ready();
-
         console.log("**** - at ready()");
-
     }
+
 }
 
 customElements.define(VaadinPaperSlider.is, VaadinPaperSlider);
