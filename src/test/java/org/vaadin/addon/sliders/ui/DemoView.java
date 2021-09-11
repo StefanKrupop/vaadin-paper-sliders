@@ -33,9 +33,10 @@ public class DemoView extends VerticalLayout
 
         HorizontalLayout sliderLine = new HorizontalLayout();
         slider = new PaperSlider(0, 100, 50);
-        slider.addValueChangeListener(e -> sliderValue.setText("Slider value: "+e.getValue()));
+        slider.addValueChangeListener(e -> sliderValue.setText("Slider value: "+slider.getValue()));
         slider.setPin(true);
         slider.setAlwaysShowPin(true);
+        slider.setItemLabelGenerator("function (value) { return value/10+'%';}");
         sliderLine.add(slider, sliderValue);
         add(sliderLine);
 
@@ -46,8 +47,9 @@ public class DemoView extends VerticalLayout
         HorizontalLayout rangeSliderLine = new HorizontalLayout();
 
         Label rangeValues = new Label("Range values");
-        PaperRangeSlider rangeSlider = new PaperRangeSlider(0, 100, 40, 60);
+        PaperRangeSlider rangeSlider = new PaperRangeSlider(0, 10, 4, 6);
         rangeSlider.addValueChangeListener(e -> rangeValues.setText("Range values: " + e.getValue().getLowerValue()+ ", "+e.getValue().getUpperValue()));
+        rangeSlider.setItemLabelGenerator("function (value) { return value*10+'$';}");
         rangeSliderLine.add(rangeSlider, rangeValues);
         add(rangeSliderLine);
     }

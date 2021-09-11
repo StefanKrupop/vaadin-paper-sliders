@@ -26,7 +26,8 @@ class VaadinPaperSlider extends
             pin="[[pin]]"
             always-show-pin="[[alwaysShowPin]]"
             snaps="[[snaps]]"
-            value-max="{{value}}">
+            value-max="{{value}}"
+            display-function="{{generateLabel}}">
         </paper-range-slider>
     `;
     }
@@ -63,12 +64,16 @@ class VaadinPaperSlider extends
         }
     }
 
+    generateLabel (value) {
+        return value;
+    }
+
     updateConfig() {
         console.log("**** - At updateConfig()");
     }
 
     ready() {
-        super.ready();
+        super.ready();        
         console.log("**** - at ready()");
     }
 
@@ -76,21 +81,3 @@ class VaadinPaperSlider extends
 
 customElements.define(VaadinPaperSlider.is, VaadinPaperSlider);
 export {VaadinPaperSlider};
-
-// // <link rel="import" href="../../bower_components/polymer/polymer-element.html">
-// // <link rel="import" href="../../bower_components/paper-slider/paper-slider.html"/>
-//
-// <dom-module id="vaadin-paper-slider">
-//     <template>
-//         <paper-slider on-value-change="onValueChanged" min="[[min]]" max="[[max]]" value="{{value}}"></paper-slider>
-//     </template>
-//     <script>
-//         class VaadinPaperSlider extends Polymer.Element {
-//             static get is() {
-//                 return 'vaadin-paper-slider';
-//             }
-//         }
-//         customElements.define(VaadinPaperSlider.is, VaadinPaperSlider);
-//     </script>
-// </dom-module>
-//

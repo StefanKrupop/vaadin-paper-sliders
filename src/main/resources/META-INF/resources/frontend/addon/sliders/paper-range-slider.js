@@ -26,7 +26,8 @@ class VaadinPaperRangeSlider extends
                 value-min="{{lowerValue}}"
                 value-max="{{upperValue}}"
                 value-diff-min="[[valueDiffMin]]"
-                value-diff-max="[[valueDiffMax]]">
+                value-diff-max="[[valueDiffMax]]"
+                display-function="{{generateLabel}}">
         </paper-range-slider>     
     `;
     }
@@ -64,6 +65,10 @@ class VaadinPaperRangeSlider extends
                 type: Number
             }
         }
+    }
+
+    generateLabel (value) {
+        return value;
     }
 
     updateConfig() {

@@ -115,6 +115,10 @@ public class PaperSlider extends PolymerTemplate<PaperSlider.SliderModel> implem
         getModel().setSnaps(snaps);
     }
 
+    public void setItemLabelGenerator(String function) {
+        getElement().executeJs("this.generateLabel="+function+";");
+    }
+
     @Override
     public Registration addValueChangeListener(ValueChangeListener<? super AbstractField.ComponentValueChangeEvent<PaperSlider, Integer>> listener) {
         requireNonNull(listener);
@@ -173,7 +177,8 @@ public class PaperSlider extends PolymerTemplate<PaperSlider.SliderModel> implem
 
         boolean getSnaps();
 
-        void setSnaps(boolean snaps);
+        void setSnaps(boolean snaps);  
 
     }
+
 }

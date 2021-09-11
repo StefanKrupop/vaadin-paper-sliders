@@ -139,6 +139,10 @@ public class PaperRangeSlider extends PolymerTemplate<PaperRangeSlider.RangeSlid
         throw new UnsupportedOperationException();
     }
 
+    public void setItemLabelGenerator(String function) {
+        getElement().executeJs("this.generateLabel="+function+";");
+    }
+
     @EventHandler
     public void onValueChanged() {
         final AbstractField.ComponentValueChangeEvent<PaperRangeSlider, IntRange> event = new AbstractField.ComponentValueChangeEvent<>(this, this, oldValue, true);
