@@ -65,8 +65,8 @@ public class PaperRangeSlider extends PolymerTemplate<PaperRangeSlider.RangeSlid
             throw new IllegalArgumentException("lowerValue must not be lower than min");
         }
 
-        if(lowerValue >= upperValue){
-            throw new IllegalArgumentException("lowerValue must not be larger or equal than upperValue");
+        if(lowerValue > upperValue){
+            throw new IllegalArgumentException("lowerValue must not be larger than upperValue");
         }
 
         final RangeSliderModel model = getModel();
@@ -218,8 +218,8 @@ public class PaperRangeSlider extends PolymerTemplate<PaperRangeSlider.RangeSlid
             }
 
 
-            if (lowerValue >= upperValue) {
-                throw new IllegalArgumentException("lower value (" + lowerValue + ") cannot be larger or equal upper value (" + upperValue + ")");
+            if (lowerValue > upperValue) {
+                throw new IllegalArgumentException("lower value (" + lowerValue + ") cannot be larger than upper value (" + upperValue + ")");
             }
 
             this.lowerValue = lowerValue;
